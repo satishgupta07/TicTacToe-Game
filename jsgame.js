@@ -1,13 +1,17 @@
 
 let sign = "x";
-
+let disp = document.getElementById("player");
 
 function printx(number){
     let isko = document.getElementById("r"+number)
     console.log(isko)
-
-    isko.innerText=sign;
-    checksign()
+    
+    if(isko.innerText==""){
+        isko.innerText=sign;
+        checksign()
+        disp.innerHTML = "<center>"+ sign + " ka turn hai"+"</center>" 
+    }
+    
 }
 
 function checksign(){
