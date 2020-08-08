@@ -38,10 +38,14 @@ function checkMove(a,b,c,m){
 }
 
 function winner(){
-    if(checkMove(1,2,3,"x") || checkMove(4,5,6,"x") || checkMove(7,8,9,"x") ||
-        checkMove(1,4,7,"x") || checkMove(2,5,8,"x") || checkMove(3,6,9,"x") ||
-              checkMove(1,5,9,"x") || checkMove(7,5,3,"x") ){
+    if(checkMove(1,2,3,sign) || checkMove(4,5,6,sign) || checkMove(7,8,9,sign) ||
+        checkMove(1,4,7,sign) || checkMove(2,5,8,sign) || checkMove(3,6,9,sign) ||
+              checkMove(1,5,9,sign) || checkMove(7,5,3,sign) ){
                  
-                    alert("X is Winner");
+                    disp.innerHTML = "<center>"+ sign + " is Winner" + "</center>";
+
+                    for(let i=1; i<=9; i++){
+                        document.getElementById("r"+i).innerHTML = "";
+                    }
             }         
 }
