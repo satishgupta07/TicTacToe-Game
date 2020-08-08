@@ -8,9 +8,11 @@ function printx(number){
     
     if(isko.innerText==""){
         isko.innerText=sign;
+        winner();
+
         checksign()
         disp.innerHTML = "<center>"+ sign + " ka turn hai"+"</center>" 
-        winner();
+        
     }
     
 }
@@ -47,5 +49,17 @@ function winner(){
                     for(let i=1; i<=9; i++){
                         document.getElementById("r"+i).innerHTML = "";
                     }
-            }         
+                    throw "game end";
+            }   
+            
+            else{
+                if((getBox(1) != "") && (getBox(2) != "") && (getBox(3) != "") &&
+                    (getBox(4) != "") && (getBox(5) != "") && (getBox(6) != "") &&
+                    (getBox(7) != "") && (getBox(8) != "") && (getBox(9) != "") ){
+                         
+                        disp.innerHTML = "<center> Its A Tie </center>"
+                        throw "its a tie";
+                    }
+                    
+            }
 }
